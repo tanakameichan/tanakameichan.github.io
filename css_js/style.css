@@ -185,6 +185,8 @@ table {
   max-height: 85vh; /* 画面高の85%に収める */
   overflow-y: auto;  /* 長文時に縦スクロール可能に */
   box-sizing: border-box;
+  max-height: 85vh;   /* 画面の高さの85%までに制限 */
+  overflow-y: auto;   /* 文字が多い場合はボックス内を縦スクロール可能にする */
 }
 
 .stock-detail-close {
