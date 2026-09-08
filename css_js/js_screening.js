@@ -173,7 +173,7 @@ function searchStocks() {
 }
 
 
-/* テーブルのモーダル */
+// テーブルのモーダル
 function openStockDetail(button) {
 
     const title = button.dataset.title;
