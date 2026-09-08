@@ -166,47 +166,50 @@ table {
 
 
 
-/* 3. モーダルのスマホ画面はみ出し防止 */
+/* モーダルの全体背景（画面全体を覆うオーバーレイ） */
 .stock-detail-modal {
+  display: none; /* 初期状態は非表示 */
+  position: fixed; /* 画面に固定 */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* 背景を半透明の黒に */
+  z-index: 9999; /* 他の要素より一番手前に表示 */
   box-sizing: border-box;
   padding: 1rem;
 }
 
-
+/* JSで .show が付いた時に画面中央に表示 */
 .stock-detail-modal.show {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
 }
 
+/* モーダルの白枠コンテンツ */
 .stock-detail-box {
-  width: 100%;
-  max-width: 500px;
-  max-height: 85vh; /* 画面高の85%に収める */
-  overflow-y: auto;  /* 長文時に縦スクロール可能に */
-  box-sizing: border-box;
-  max-height: 85vh;   /* 画面の高さの85%までに制限 */
-  overflow-y: auto;   /* 文字が多い場合はボックス内を縦スクロール可能にする */
-}
-
-.stock-detail-close {
-    position: absolute;
-    right: 10px;
-    top: 5px;
-    border: none;
-    background: none;
-    font-size: 30px;
-    color: #333;
-    cursor: pointer;
-}
-
-/* モーダル（詳細ポップアップ）のスマホ対応 */
-.stock-detail-box {
+  background-color: #ffffff; /* 白背景を明示的に指定 */
+  position: relative; /* 閉じるボタン(×)の基準点 */
   width: 90%;
   max-width: 500px;
   max-height: 80vh;
-  overflow-y: auto; /* 長文テキスト時に縦スクロール可能に */
+  overflow-y: auto; /* 長文時に内部スクロール */
   box-sizing: border-box;
+  border-radius: 8px; /* 角丸（お好みで） */
+  padding: 20px;
+}
+
+.stock-detail-close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  border: none;
+  background: none;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+  line-height: 1;
 }
 
 /* パンくず*/
