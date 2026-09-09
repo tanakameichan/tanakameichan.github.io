@@ -192,7 +192,7 @@ table {
   background-color: #ffffff; /* 白背景を明示的に指定 */
   position: relative; /* 閉じるボタン(×)の基準点 */
   width: 90%;
-  /* max-width: 500px; */
+  max-width: 900px;
   max-height: 80vh;
   overflow-y: auto; /* 長文時に内部スクロール */
   box-sizing: border-box;
