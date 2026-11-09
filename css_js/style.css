@@ -1,137 +1,229 @@
-@charset "UTF-8";
+        body {
+            margin: 0;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                "Hiragino Kaku Gothic ProN",
+                "Yu Gothic",
+                Meiryo,
+                sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: white;
+        }
 
-/* --- 全体のベース設定 -------------------- */
-:root {
-  --bg-color: #f8fafc;
-  --card-bg: #ffffff;
-  --text-main: #1e293b;
-  --text-sub: #64748b;
-  --accent-color: #3b82f6; /* お好みで好きな色に変更可能 (例: #ec4899 ピンク系など) */
-  --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
-  --radius: 12px;
-  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px 60px;
+        }
+
+        header {
+            background: #f7f7f7;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header .container {
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #ddd;
+            font-size: 22px;
+        }
+
+        .lead {
+            font-size: 17px;
+        }
+
+        .tool-box {
+            margin: 30px 0;
+            padding: 30px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .tool-button {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .tool-button:hover {
+            opacity: 0.8;
+        }
+
+        .point {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+
+        .point h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .notice {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 30px 0;
+            background: #eee;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        footer a {
+            color: #555;
+        }
+
+
+
+
+
+
+
+h3 {
+  padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+  color: #494949;/*文字色*/
+  background: #f4f4f4;/*背景色*/
+  border-left: solid 5px #7db4e6;/*左線*/
+  border-bottom: solid 3px #d7d7d7;/*下線*/
 }
 
-body {
-  background-color: var(--bg-color);
-  color: var(--text-main);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.7;
-  margin: 0;
-  padding: 0;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* --- レイアウトの枠組み（中央寄せ・最大幅設定） ------ */
-/* ※ もし特定のidやclassがあればそれに合わせて調整してください */
-body > *, main, .container, #app {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-/* --- 見出しのスタイリング ---------------- */
-h1, h2, h3 {
-  color: var(--text-main);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-}
-
-h1 {
-  font-size: 2.2rem;
-  margin-bottom: 1.5rem;
-  background: var(--accent-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-h2 {
-  font-size: 1.5rem;
-  border-bottom: 2px solid #e2e8f0;
-  padding-bottom: 0.5rem;
-  margin-top: 2.5rem;
-}
-
-/* --- カード・ボックスデザイン化 ---------- */
-/* ページ内のセクションやdiv、リスト項目などをカード風に浮き上がらせます */
-section, article, .card, div > div {
-  background: var(--card-bg);
-  border-radius: var(--radius);
-  padding: 24px;
-  margin-bottom: 20px;
-  box-shadow: var(--shadow);
-  border: 1px solid #f1f5f9;
-  transition: var(--transition);
-}
-
-section:hover, article:hover, .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.08);
-}
-
-/* --- リンク・ボタンの洗練 ---------------- */
-a {
-  color: var(--accent-color);
-  text-decoration: none;
-  font-weight: 500;
-  transition: var(--transition);
-}
-
-a:hover {
-  opacity: 0.8;
-  text-decoration: underline;
-}
-
-/* ボタン要素がある場合 */
-button, .btn, input[type="submit"] {
-  background: var(--accent-gradient);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-  transition: var(--transition);
-}
-
-button:hover, .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
-}
-
-/* --- リストや表（テーブル）の近代化 ------ */
-ul, ol {
-  padding-left: 20px;
-  color: var(--text-sub);
-}
-
-li {
-  margin-bottom: 8px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: var(--card-bg);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  margin: 20px 0;
-}
-
+/* 表 */
 th, td {
-  padding: 12px 16px;
-  text-align: left;
-  border-bottom: 1px solid #f1f5f9;
+    border: 1px solid #ccc;
+    padding: 8px;
+    vertical-align: top;   /* 上揃え */
+    line-height: 1.5;      /* 行間を少し広げる */
 }
 
 th {
-  background-color: #f8fafc;
-  font-weight: 600;
-  color: var(--text-main);
+    background: #eee;
+    white-space: nowrap;
+}
+
+table {
+    border-collapse:  collapse;     /* セルの線を重ねる */
+}
+
+.kome-list {
+  list-style: none; /* デフォルトの黒丸を消す */
+  padding-left: 0;   /* 左側の余白をリセット */
+}
+
+.kome-list li {
+  position: relative;
+  padding-left: 1.2em;   /* ① ※の分だけ左側に余白を作る */
+  text-indent: -1.2em;   /* ② 1行目だけを左に引っ張り出す */
+}
+
+.kome-list li::before {
+  content: "※ ";    /* 文字の前に※を表示 */
+}
+
+/* 1. テーブル枠のレスポンシブ化（横スクロール制御） */
+.stock-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* iOSスワイプ対応 */
+  margin-bottom: 1rem;
+}
+
+/* 2. テーブル本体の最小幅確保とテキスト折り返し防止 */
+.stock-table {
+  width: 100%;
+  min-width: 650px; /* スマホ画面で崩れない最小幅 */
+  border-collapse: collapse;
+  white-space: nowrap; /* セル内の意図しない改行を防止 */
+}
+
+
+
+/* モーダルの全体背景（画面全体を覆うオーバーレイ） */
+.stock-detail-modal {
+  display: none; /* 初期状態は非表示 */
+  position: fixed; /* 画面に固定 */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* 背景を半透明の黒に */
+  z-index: 9999; /* 他の要素より一番手前に表示 */
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+/* JSで .show が付いた時に画面中央に表示 */
+.stock-detail-modal.show {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* モーダルの白枠コンテンツ */
+.stock-detail-box {
+  background-color: #ffffff; /* 白背景を明示的に指定 */
+  position: relative; /* 閉じるボタン(×)の基準点 */
+  width: 90%;
+  max-width: 900px;
+  max-height: 80vh;
+  overflow-y: auto; /* 長文時に内部スクロール */
+  box-sizing: border-box;
+  border-radius: 8px; /* 角丸（お好みで） */
+  padding: 20px;
+}
+
+.stock-detail-close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  border: none;
+  background: none;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* パンくず*/
+.breadcrumb ol {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    font-size: 14px;
+}
+
+.breadcrumb li + li::before {
+    content: "＞";
+    margin-right: 8px;
+    color: #888;
 }
